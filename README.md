@@ -1,6 +1,6 @@
 # maven-local-and-posgr-restore
 ### ここは…
-1. VScodeの拡張機能 [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) で動かします
+1. VScodeの拡張機能 [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers "リモートの場所をVSCodeで開けるなんて！") で動かします（**.devcontainer**フォルダ内が設定ファイルです）
 1. Docker内で構築されたjava開発環境です
 1. 試した環境がプロキシ環境だったので、**.env**ファイルでその辺の定義を書いてます
 1. Mavenバイナリを腹持ちしてて、Docker環境に配置してます（試した環境がプロキシ環境でこうなった…）
