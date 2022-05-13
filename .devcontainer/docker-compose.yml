@@ -26,15 +26,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
       POSTGRES_HOSTNAME: postgresdb
-      HTTPS_PROXY: $HTTPS_PROXY
-      HTTP_PROXY: $HTTP_PROXY
+      HTTPS_PROXY: http://$PROXY_USR:$PROXY_PASS@$PROXY_HOST:$PROXY_PORT/
+      HTTP_PROXY: http://$PROXY_USR:$PROXY_PASS@$PROXY_HOST:$PROXY_PORT/
       NO_PROXY: $NO_PROXY
-      https_proxy: $HTTPS_PROXY
-      http_proxy: $HTTP_PROXY     
+      https_proxy: http://$PROXY_USR:$PROXY_PASS@$PROXY_HOST:$PROXY_PORT/
+      http_proxy: http://$PROXY_USR:$PROXY_PASS@$PROXY_HOST:$PROXY_PORT/     
       no_proxy: $NO_PROXY
       MAVEN_CONFIG: "/home/vscode/.m2"
       MAVEN_HOME: "/usr/share/maven"
-      MAVEN_OPTS: "-Dhttp.proxyHost=[xxxx.co.jp] -Dhttp.proxyPort=443 -Dhttp.proxyUser=[ユーザID] -Dhttp.proxyPassword=[パスワード] -Dhttp.nonProxyHosts=localhost|127.0.0.1 -Dhttps.proxyHost=[xxxx.co.jp] -Dhttps.proxyPort=443 -Dhttps.proxyUser=[ユーザID] -Dhttps.proxyPassword=[パスワード] -Dhttps.nonProxyHosts=localhost|127.0.0.1"
+      MAVEN_OPTS: "-Dhttp.proxyHost=$PROXY_HOST -Dhttp.proxyPort=$PROXY_PORT -Dhttp.proxyUser=$PROXY_USR -Dhttp.proxyPassword=$PROXY_PASS -Dhttp.nonProxyHosts=localhost|127.0.0.1 -Dhttps.proxyHost=$PROXY_HOST -Dhttps.proxyPort=$PROXY_PORT -Dhttps.proxyUser=$PROXY_USR -Dhttps.proxyPassword=$PROXY_PASS -Dhttps.nonProxyHosts=localhost|127.0.0.1"
 
     volumes:
       - ..:/workspace:cached
